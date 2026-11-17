@@ -9,7 +9,7 @@ import { SignInButton, useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { FEATURES, PLACEHOLDERS, STEPS, SUGGESTIONS } from "@/lib/data";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { ArrowRight, Key } from "lucide-react";
+import { ArrowRight, ChevronRight, Key } from "lucide-react";
 import { mergeClassNames } from "@base-ui/react";
 
 export default function Home() {
@@ -376,6 +376,54 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <section className="px-4 pb-32">
+        <div className="mx-auto mb-14 max-w-5xl text-center">
+        <SectionLabel>Simple pricing</SectionLabel>
+        <SectionHeading gray="Start free" blue="scale when ready"/>
+
+        <p className="mx-auto mt-4 max-w-sm text-sm text-white/35">
+        No credit card required. Upgrade or downgrade anytime</p>
+        </div>
+
+        <div className="mx-auto max-w-3xl"></div>
+      </section>
+
+      <section className="relative mx-auto mb-32 max-w-5xl overflow-hidden
+      rounded-2xl border border-white/8 px-10 py-24 text-center">
+        <HoleBackground
+        strokeColor="rgba(255,255,255,0.05)"
+        className="absolute inset-0 h-full w-full"
+        style={{
+          maskImage:
+          "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 50%, transparent 100%)",
+          WebkitMaskImage:
+          "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 50%, transparent 100%)",
+        }}
+        />
+
+        <SectionHeading gray="Start building," blue="for free"/>
+
+        <p className="mb-8 text-sm leading-relaxed text-white/40">
+        Get 10 free generations on sign up. No credit card required.
+        <br />
+        Upgrade when you&apos;re ready
+        </p>
+
+        <SignInButton mode="modal">
+          <Button
+          size="lg"
+          className="relative"h-11 rounded-full bg-white px-8>
+            Get started free
+            <ChevronRight className="h-4 w-4"/>
+          </Button>
+        </SignInButton>
+      </section>
+
+      <footer className="relative z-10 border-white/7 py-12 mx-auto px-6
+      flex flex-wrap items items-center justify-center text-stone-400">
+        Made with ❤️ by 5idana
+      </footer>
     </main>
   );
 }
