@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image";
-import { SignInButton, useAuth } from "@clerk/nextjs";
+import { PricingTable, SignInButton, useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { FEATURES, PLACEHOLDERS, STEPS, SUGGESTIONS } from "@/lib/data";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -386,7 +386,19 @@ export default function Home() {
         No credit card required. Upgrade or downgrade anytime</p>
         </div>
 
-        <div className="mx-auto max-w-3xl"></div>
+        <div className="mx-auto max-w-5xl">
+          <PricingTable
+          checkoutProps={{
+            appearance: {
+              elements: {
+                drawerRoot: {
+                  zIndex: 2000,
+                },
+              },
+            },
+          }}
+          />
+        </div>
       </section>
 
       <section className="relative mx-auto mb-32 max-w-5xl overflow-hidden
